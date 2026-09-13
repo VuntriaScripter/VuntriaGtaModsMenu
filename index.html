@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,15 +16,8 @@
 
         body {
             min-height: 100vh;
-
             background:
-                radial-gradient(
-                    circle at top,
-                    #071a33 0%,
-                    #02060d 45%,
-                    #000000 100%
-                );
-
+                radial-gradient(circle at top, #071a33 0%, #02060d 45%, #000000 100%);
             font-family: Arial, sans-serif;
             color: white;
 
@@ -33,14 +26,13 @@
             align-items: center;
 
             position: relative;
-            overflow: hidden;
         }
 
         /* =========================
-           DISCORD PANEL
+           DISCORD INFO - TOP LEFT
         ========================= */
 
-        .discord-panel {
+        .discord-info {
             position: fixed;
             top: 25px;
             left: 25px;
@@ -49,54 +41,45 @@
 
             padding: 16px;
 
-            background: rgba(3, 12, 25, 0.88);
+            background: rgba(3, 12, 25, 0.92);
 
             border: 1px solid #0b5cff;
-            border-radius: 14px;
+            border-radius: 12px;
 
             box-shadow:
-                0 0 20px rgba(0, 92, 255, 0.18);
+                0 0 20px rgba(0, 92, 255, 0.20);
 
-            backdrop-filter: blur(12px);
-
-            z-index: 10;
+            z-index: 100;
         }
 
-        .discord-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            margin-bottom: 14px;
-
+        .discord-header {
             font-size: 12px;
-            font-weight: 800;
-
-            color: #6faeff;
+            font-weight: bold;
+            color: #4da3ff;
 
             text-transform: uppercase;
             letter-spacing: 1.5px;
+
+            margin-bottom: 12px;
         }
 
-        .discord-user {
+        .discord-item {
             display: flex;
             align-items: center;
+
             gap: 12px;
 
             padding: 10px;
 
-            border-radius: 10px;
+            background: rgba(7, 26, 51, 0.7);
 
-            background: rgba(10, 35, 65, 0.55);
+            border-radius: 8px;
 
             margin-bottom: 8px;
-
-            transition: 0.2s ease;
         }
 
-        .discord-user:hover {
-            background: rgba(15, 55, 100, 0.7);
-            transform: translateX(3px);
+        .discord-item:last-child {
+            margin-bottom: 0;
         }
 
         .discord-icon {
@@ -107,52 +90,34 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 9px;
-
             background: #061a35;
 
             border: 1px solid #0b5cff;
 
-            font-size: 18px;
+            border-radius: 8px;
 
-            box-shadow:
-                0 0 12px rgba(0, 110, 255, 0.2);
+            font-size: 18px;
         }
 
-        .discord-info {
+        .discord-text {
             display: flex;
             flex-direction: column;
+
             gap: 3px;
         }
 
-        .discord-info strong {
+        .discord-text strong {
             font-size: 14px;
-            color: white;
+            color: #ffffff;
         }
 
-        .discord-info span {
+        .discord-text span {
             font-size: 11px;
-            color: #70839a;
+            color: #71849b;
         }
 
         .online {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-
-            color: #55aaff !important;
-        }
-
-        .online-dot {
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: #1683ff;
-
-            box-shadow:
-                0 0 8px #1683ff;
+            color: #4da3ff !important;
         }
 
 
@@ -162,11 +127,8 @@
 
         .container {
             text-align: center;
-
             width: 90%;
             max-width: 650px;
-
-            padding: 100px 0 80px;
         }
 
 
@@ -176,11 +138,8 @@
 
         h1 {
             font-size: 48px;
-
             font-weight: 900;
-
-            letter-spacing: 4px;
-
+            letter-spacing: 3px;
             margin-bottom: 45px;
 
             color: #ffffff;
@@ -192,41 +151,40 @@
 
 
         /* =========================
-           MOD BUTTONS
+           MODS
         ========================= */
 
         .mods {
             display: flex;
             flex-direction: column;
-
             gap: 18px;
         }
 
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
         .mod-button {
             display: flex;
-
             align-items: center;
             justify-content: space-between;
 
             padding: 20px 25px;
 
             text-decoration: none;
-
             color: white;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #071a33,
-                    #030b16
-                );
+            background: linear-gradient(
+                135deg,
+                #071a33,
+                #030b16
+            );
 
             border: 1px solid #0b5cff;
-
             border-radius: 12px;
 
             font-size: 17px;
-
             font-weight: 700;
 
             box-shadow:
@@ -240,32 +198,38 @@
 
             border-color: #1683ff;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #0b2c55,
-                    #061426
-                );
+            background: linear-gradient(
+                135deg,
+                #0b2c55,
+                #061426
+            );
 
             box-shadow:
                 0 0 15px rgba(0, 110, 255, 0.45),
                 0 0 35px rgba(0, 110, 255, 0.18);
         }
 
+
+        /* =========================
+           MOD NAME
+        ========================= */
+
         .mod-name {
             display: flex;
-
             align-items: center;
-
             gap: 14px;
         }
+
+
+        /* =========================
+           ICON
+        ========================= */
 
         .icon {
             width: 42px;
             height: 42px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
@@ -281,9 +245,13 @@
                 0 0 12px rgba(0, 110, 255, 0.2);
         }
 
+
+        /* =========================
+           DOWNLOAD
+        ========================= */
+
         .download {
             color: #4da3ff;
-
             font-size: 15px;
         }
 
@@ -302,23 +270,20 @@
 
 
         /* =========================
-           FOOTER
+           CREDIT
         ========================= */
 
         .credit {
             position: fixed;
 
-            bottom: 20px;
-
+            bottom: 18px;
             left: 50%;
 
             transform: translateX(-50%);
 
-            font-size: 13px;
-
             color: #52657b;
 
-            letter-spacing: 0.5px;
+            font-size: 12px;
 
             white-space: nowrap;
         }
@@ -327,7 +292,7 @@
             color: #4da3ff;
 
             text-shadow:
-                0 0 10px rgba(0, 110, 255, 0.5);
+                0 0 10px rgba(0, 110, 255, 0.4);
         }
 
 
@@ -335,11 +300,9 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 700px) {
+        @media (max-width: 600px) {
 
-            .discord-panel {
-                position: absolute;
-
+            .discord-info {
                 top: 15px;
                 left: 15px;
 
@@ -348,11 +311,11 @@
 
             .container {
                 padding-top: 150px;
+                padding-bottom: 60px;
             }
 
             h1 {
                 font-size: 36px;
-
                 margin-bottom: 35px;
             }
 
@@ -369,42 +332,40 @@
             }
 
             .credit {
-                font-size: 11px;
+                font-size: 10px;
             }
         }
     </style>
 </head>
 
-
 <body>
 
 
     <!-- =========================
-         DISCORD PANEL
+         DISCORD INFO
     ========================= -->
 
-    <div class="discord-panel">
+    <div class="discord-info">
 
-        <div class="discord-title">
+        <div class="discord-header">
             💬 Discord
         </div>
 
 
-        <!-- USER -->
+        <!-- DISCORD NAME -->
 
-        <div class="discord-user">
+        <div class="discord-item">
 
             <div class="discord-icon">
                 👤
             </div>
 
-            <div class="discord-info">
+            <div class="discord-text">
 
                 <strong>Vuntria</strong>
 
                 <span class="online">
-                    <span class="online-dot"></span>
-                    Online
+                    ● Online
                 </span>
 
             </div>
@@ -412,15 +373,15 @@
         </div>
 
 
-        <!-- SERVER -->
+        <!-- DISCORD SERVER -->
 
-        <div class="discord-user">
+        <div class="discord-item">
 
             <div class="discord-icon">
-                🛡️
+                💬
             </div>
 
-            <div class="discord-info">
+            <div class="discord-text">
 
                 <strong>VuntriaMods</strong>
 
@@ -475,7 +436,6 @@
             </a>
 
 
-
             <!-- SCRIPT HOOK V -->
 
             <a
@@ -501,7 +461,6 @@
                 </span>
 
             </a>
-
 
 
             <!-- MENYOO -->
@@ -530,7 +489,6 @@
 
             </a>
 
-
         </div>
 
 
@@ -539,7 +497,6 @@
         </p>
 
     </div>
-
 
 
     <!-- =========================
