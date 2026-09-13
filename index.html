@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,60 +16,217 @@
 
         body {
             min-height: 100vh;
+
             background:
-                radial-gradient(circle at top, #071a33 0%, #02060d 45%, #000000 100%);
+                radial-gradient(
+                    circle at top,
+                    #071a33 0%,
+                    #02060d 45%,
+                    #000000 100%
+                );
+
             font-family: Arial, sans-serif;
             color: white;
 
             display: flex;
             justify-content: center;
             align-items: center;
+
+            position: relative;
+            overflow: hidden;
         }
+
+        /* =========================
+           DISCORD PANEL
+        ========================= */
+
+        .discord-panel {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+
+            width: 230px;
+
+            padding: 16px;
+
+            background: rgba(3, 12, 25, 0.88);
+
+            border: 1px solid #0b5cff;
+            border-radius: 14px;
+
+            box-shadow:
+                0 0 20px rgba(0, 92, 255, 0.18);
+
+            backdrop-filter: blur(12px);
+
+            z-index: 10;
+        }
+
+        .discord-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 14px;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            color: #6faeff;
+
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .discord-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 10px;
+
+            border-radius: 10px;
+
+            background: rgba(10, 35, 65, 0.55);
+
+            margin-bottom: 8px;
+
+            transition: 0.2s ease;
+        }
+
+        .discord-user:hover {
+            background: rgba(15, 55, 100, 0.7);
+            transform: translateX(3px);
+        }
+
+        .discord-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background: #061a35;
+
+            border: 1px solid #0b5cff;
+
+            font-size: 18px;
+
+            box-shadow:
+                0 0 12px rgba(0, 110, 255, 0.2);
+        }
+
+        .discord-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .discord-info strong {
+            font-size: 14px;
+            color: white;
+        }
+
+        .discord-info span {
+            font-size: 11px;
+            color: #70839a;
+        }
+
+        .online {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            color: #55aaff !important;
+        }
+
+        .online-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #1683ff;
+
+            box-shadow:
+                0 0 8px #1683ff;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
 
         .container {
             text-align: center;
+
             width: 90%;
             max-width: 650px;
+
+            padding: 100px 0 80px;
         }
+
+
+        /* =========================
+           TITLE
+        ========================= */
 
         h1 {
             font-size: 48px;
+
             font-weight: 900;
-            letter-spacing: 3px;
+
+            letter-spacing: 4px;
+
             margin-bottom: 45px;
 
             color: #ffffff;
+
             text-shadow:
                 0 0 10px #006eff,
                 0 0 30px rgba(0, 110, 255, 0.5);
         }
 
+
+        /* =========================
+           MOD BUTTONS
+        ========================= */
+
         .mods {
             display: flex;
             flex-direction: column;
+
             gap: 18px;
         }
 
         .mod-button {
             display: flex;
+
             align-items: center;
             justify-content: space-between;
 
             padding: 20px 25px;
 
             text-decoration: none;
+
             color: white;
 
-            background: linear-gradient(
-                135deg,
-                #071a33,
-                #030b16
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a33,
+                    #030b16
+                );
 
             border: 1px solid #0b5cff;
+
             border-radius: 12px;
 
             font-size: 17px;
+
             font-weight: 700;
 
             box-shadow:
@@ -83,11 +240,12 @@
 
             border-color: #1683ff;
 
-            background: linear-gradient(
-                135deg,
-                #0b2c55,
-                #061426
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b2c55,
+                    #061426
+                );
 
             box-shadow:
                 0 0 15px rgba(0, 110, 255, 0.45),
@@ -96,7 +254,9 @@
 
         .mod-name {
             display: flex;
+
             align-items: center;
+
             gap: 14px;
         }
 
@@ -105,33 +265,94 @@
             height: 42px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             background: #061a35;
+
             border: 1px solid #0b5cff;
+
             border-radius: 9px;
 
             font-size: 20px;
 
-            box-shadow: 0 0 12px rgba(0, 110, 255, 0.2);
+            box-shadow:
+                0 0 12px rgba(0, 110, 255, 0.2);
         }
 
         .download {
             color: #4da3ff;
+
             font-size: 15px;
         }
 
+
+        /* =========================
+           WINRAR
+        ========================= */
+
         .winrar {
             margin-top: 30px;
+
             color: #6f8095;
+
             font-size: 13px;
         }
 
-        @media (max-width: 600px) {
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .credit {
+            position: fixed;
+
+            bottom: 20px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            font-size: 13px;
+
+            color: #52657b;
+
+            letter-spacing: 0.5px;
+
+            white-space: nowrap;
+        }
+
+        .credit strong {
+            color: #4da3ff;
+
+            text-shadow:
+                0 0 10px rgba(0, 110, 255, 0.5);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .discord-panel {
+                position: absolute;
+
+                top: 15px;
+                left: 15px;
+
+                width: 210px;
+            }
+
+            .container {
+                padding-top: 150px;
+            }
 
             h1 {
                 font-size: 36px;
+
                 margin-bottom: 35px;
             }
 
@@ -142,66 +363,193 @@
             .mod-name {
                 gap: 10px;
             }
+
+            .download {
+                font-size: 12px;
+            }
+
+            .credit {
+                font-size: 11px;
+            }
         }
     </style>
 </head>
 
+
 <body>
+
+
+    <!-- =========================
+         DISCORD PANEL
+    ========================= -->
+
+    <div class="discord-panel">
+
+        <div class="discord-title">
+            💬 Discord
+        </div>
+
+
+        <!-- USER -->
+
+        <div class="discord-user">
+
+            <div class="discord-icon">
+                👤
+            </div>
+
+            <div class="discord-info">
+
+                <strong>Vuntria</strong>
+
+                <span class="online">
+                    <span class="online-dot"></span>
+                    Online
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVER -->
+
+        <div class="discord-user">
+
+            <div class="discord-icon">
+                🛡️
+            </div>
+
+            <div class="discord-info">
+
+                <strong>VuntriaMods</strong>
+
+                <span>
+                    Discord Server
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
 
     <div class="container">
 
         <h1>MODS INSTALL</h1>
 
+
         <div class="mods">
+
+
+            <!-- SCRIPT HOOK DOT NET -->
 
             <a
                 class="mod-button"
                 href="files/ScriptHookVDotNet.zip"
                 download
             >
+
                 <div class="mod-name">
-                    <div class="icon">🧩</div>
-                    <span>ScriptHookVDotNet</span>
+
+                    <div class="icon">
+                        🧩
+                    </div>
+
+                    <span>
+                        ScriptHookVDotNet
+                    </span>
+
                 </div>
 
-                <span class="download">DOWNLOAD ↓</span>
+                <span class="download">
+                    DOWNLOAD ↓
+                </span>
+
             </a>
 
+
+
+            <!-- SCRIPT HOOK V -->
 
             <a
                 class="mod-button"
                 href="files/ScriptHookV_3889.0_1158.13.zip"
                 download
             >
+
                 <div class="mod-name">
-                    <div class="icon">⚙️</div>
-                    <span>ScriptHookV 3889.0</span>
+
+                    <div class="icon">
+                        ⚙️
+                    </div>
+
+                    <span>
+                        ScriptHookV 3889.0
+                    </span>
+
                 </div>
 
-                <span class="download">DOWNLOAD ↓</span>
+                <span class="download">
+                    DOWNLOAD ↓
+                </span>
+
             </a>
 
+
+
+            <!-- MENYOO -->
 
             <a
                 class="mod-button"
                 href="files/6f8580-MenyooSP.zip"
                 download
             >
+
                 <div class="mod-name">
-                    <div class="icon">🚗</div>
-                    <span>MenyooSP</span>
+
+                    <div class="icon">
+                        🚗
+                    </div>
+
+                    <span>
+                        MenyooSP
+                    </span>
+
                 </div>
 
-                <span class="download">DOWNLOAD ↓</span>
+                <span class="download">
+                    DOWNLOAD ↓
+                </span>
+
             </a>
 
+
         </div>
+
 
         <p class="winrar">
             ⚠️ WinRAR or another archive manager is required to extract the files.
         </p>
 
     </div>
+
+
+
+    <!-- =========================
+         CREDIT
+    ========================= -->
+
+    <div class="credit">
+        Created by <strong>Vuntria</strong> / <strong>Galaxy</strong>
+    </div>
+
 
 </body>
 </html>
