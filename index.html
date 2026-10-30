@@ -1,21 +1,21 @@
-```html
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>VUNTRIA MENU | GTA V</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap');
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 
+<style>
 :root {
     --purple: #a855f7;
-    --dark-purple: #7025c9;
-    --bg: #08070d;
-    --card: #12101a;
-    --text: #ffffff;
-    --muted: #a49bb2;
+    --background: #08060d;
+    --card: #15101e;
+    --white: #ffffff;
+    --grey: #aaa0b8;
 }
 
 * {
@@ -26,19 +26,21 @@
 }
 
 body {
-    background: var(--bg);
-    color: var(--text);
+    background: var(--background);
+    color: white;
     font-family: 'Inter', sans-serif;
 }
 
+/* NAVIGATION */
+
 header {
-    height: 80px;
+    width: 100%;
+    padding: 23px 8%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 8%;
-    background: rgba(8,7,13,.95);
-    border-bottom: 1px solid #251638;
+    align-items: center;
+    background: #0b0811;
+    border-bottom: 1px solid #27153b;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -46,16 +48,20 @@ header {
 
 .logo {
     font-family: 'Orbitron', sans-serif;
-    font-size: 23px;
     font-weight: 900;
+    font-size: 23px;
     color: var(--purple);
     letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
 }
 
 nav a {
     color: #ddd;
     text-decoration: none;
-    margin-left: 25px;
     font-size: 13px;
     transition: .3s;
 }
@@ -64,31 +70,34 @@ nav a:hover {
     color: var(--purple);
 }
 
+/* ACCUEIL */
+
 .hero {
-    min-height: 600px;
+    min-height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 70px 20px;
+    padding: 40px 20px;
+
     background:
-    radial-gradient(ellipse at center, #35145d 0%, #100a1c 40%, #08070d 75%);
+    radial-gradient(ellipse at center, #38145e 0%, #160d23 40%, #08060d 78%);
 }
 
-.tag {
-    border: 1px solid #8b42d6;
-    color: #c994ff;
-    padding: 9px 18px;
+.status {
+    padding: 10px 20px;
+    border: 1px solid #8c40d1;
     border-radius: 30px;
+    color: #c891ff;
     font-size: 11px;
     letter-spacing: 2px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(38px, 8vw, 85px);
+    font-size: clamp(40px, 8vw, 90px);
     font-weight: 900;
     letter-spacing: 5px;
     text-shadow: 0 0 35px #a855f780;
@@ -99,25 +108,28 @@ nav a:hover {
 }
 
 .hero p {
-    color: #b9adc8;
     max-width: 550px;
+    color: var(--grey);
     line-height: 1.8;
-    margin: 20px 0 30px;
+    margin: 25px 0 35px;
 }
 
 .buttons {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 18px;
     justify-content: center;
 }
 
+/* BOUTONS */
+
 .btn {
-    padding: 15px 27px;
-    border-radius: 7px;
+    display: inline-block;
+    padding: 16px 30px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 700;
     font-size: 13px;
+    font-weight: 900;
     transition: .3s;
 }
 
@@ -128,14 +140,16 @@ nav a:hover {
 }
 
 .secondary {
-    border: 1px solid #7436a9;
+    border: 1px solid var(--purple);
     color: white;
 }
 
 .btn:hover {
-    transform: translateY(-4px);
-    filter: brightness(1.2);
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px #a855f777;
 }
+
+/* SECTIONS */
 
 section {
     padding: 90px 8%;
@@ -143,7 +157,7 @@ section {
 
 .section-title {
     text-align: center;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 .section-title h2 {
@@ -156,32 +170,34 @@ section {
 }
 
 .section-title p {
-    color: var(--muted);
-    margin-top: 12px;
+    color: var(--grey);
+    margin-top: 15px;
 }
+
+/* CARTES */
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
 
 .card {
     background: var(--card);
-    padding: 30px;
-    border: 1px solid #291c39;
+    border: 1px solid #30203f;
     border-radius: 12px;
+    padding: 35px 25px;
     transition: .3s;
 }
 
 .card:hover {
+    transform: translateY(-7px);
     border-color: var(--purple);
-    transform: translateY(-6px);
-    box-shadow: 0 10px 35px #8b42d622;
+    box-shadow: 0 10px 35px #a855f722;
 }
 
 .card .icon {
-    font-size: 30px;
+    font-size: 35px;
     margin-bottom: 20px;
 }
 
@@ -190,77 +206,100 @@ section {
 }
 
 .card p {
-    color: var(--muted);
+    color: var(--grey);
     font-size: 13px;
     line-height: 1.8;
 }
 
-.download {
-    background: linear-gradient(135deg,#1b1029,#100c18);
-    border: 1px solid #542c7c;
-    border-radius: 15px;
-    padding: 45px 25px;
+/* MODS */
+
+.mods-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 60px 25px;
     text-align: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #21132f, #100b18);
+    border: 1px solid #7137a5;
+    box-shadow: 0 0 40px #a855f722;
 }
 
-.download h2 {
+.mods-box h2 {
     font-family: 'Orbitron', sans-serif;
-    margin-bottom: 15px;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
-.download p {
-    color: var(--muted);
-    margin-bottom: 25px;
-    line-height: 1.7;
+.mods-box h2 span {
+    color: var(--purple);
 }
 
-.video-placeholder {
-    background: #12101a;
-    border: 1px dashed #653b8e;
-    border-radius: 12px;
-    padding: 65px 20px;
+.mods-box p {
+    color: var(--grey);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* DISCORD */
+
+.discord-box {
     text-align: center;
-    color: #b9adc8;
+    padding: 55px 20px;
+    background: #15101e;
+    border: 1px solid #38204e;
+    border-radius: 15px;
 }
 
-.video-placeholder .icon {
-    font-size: 45px;
-    margin-bottom: 15px;
+.discord-box h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
 }
+
+.discord-box h2 span {
+    color: var(--purple);
+}
+
+.discord-box p {
+    color: var(--grey);
+    margin-bottom: 30px;
+}
+
+/* FOOTER */
 
 footer {
     text-align: center;
     padding: 35px 15px;
-    border-top: 1px solid #251638;
-    color: #82788e;
+    color: #81768d;
     font-size: 12px;
+    border-top: 1px solid #27153b;
+    line-height: 2;
 }
 
 footer span {
     color: var(--purple);
 }
 
-@media(max-width:700px) {
+/* MOBILE */
+
+@media(max-width: 700px) {
     header {
-        padding: 15px 5%;
-        height: auto;
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        padding: 20px 10px;
     }
 
     nav {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
 
-    nav a {
-        margin: 0;
-    }
-
     section {
         padding: 65px 5%;
+    }
+
+    .hero {
+        min-height: 550px;
     }
 }
 </style>
@@ -268,107 +307,147 @@ footer span {
 
 <body>
 
+<!-- MENU -->
+
 <header>
     <div class="logo">VUNTRIA MENU</div>
+
     <nav>
         <a href="#home">Accueil</a>
-        <a href="#features">Fonctionnalités</a>
-        <a href="#videos">Vidéos</a>
-        <a href="#download">Téléchargement</a>
+        <a href="#features">Présentation</a>
+        <a href="#mods">Mods</a>
         <a href="#discord">Discord</a>
     </nav>
 </header>
 
+<!-- ACCUEIL -->
+
 <div class="hero" id="home">
-    <div class="tag">GTA V ONLINE • VUNTRIA PROJECT</div>
+
+    <div class="status">
+        GTA V ONLINE • VUNTRIA PROJECT
+    </div>
 
     <h1>VUNTRIA <span>MENU</span></h1>
 
     <p>
         Bienvenue sur Vuntria Menu.
-        Découvre notre projet GTA V Online,
-        ses fonctionnalités et nos démonstrations vidéo.
+        Découvre notre univers GTA V Online,
+        nos ressources et notre communauté.
     </p>
 
     <div class="buttons">
-        <a href="#features" class="btn primary">DÉCOUVRIR</a>
-        <a href="#videos" class="btn secondary">VOIR LES VIDÉOS</a>
+        <a href="#mods" class="btn primary">
+            DÉCOUVRIR LES MODS
+        </a>
+
+        <a href="#discord" class="btn secondary">
+            REJOINDRE DISCORD
+        </a>
     </div>
+
 </div>
 
+<!-- PRESENTATION -->
+
 <section id="features">
+
     <div class="section-title">
-        <h2>NOS <span>FONCTIONNALITÉS</span></h2>
-        <p>Découvre les différentes sections du projet.</p>
+        <h2>NOTRE <span>UNIVERS</span></h2>
+        <p>Bienvenue dans l'univers Vuntria.</p>
     </div>
 
     <div class="cards">
+
         <div class="card">
             <div class="icon">🎮</div>
-            <h3>Présentation</h3>
-            <p>Découvre le projet Vuntria Menu et son interface.</p>
+            <h3>GTA V ONLINE</h3>
+            <p>Un espace dédié à l'univers de GTA V Online.</p>
         </div>
 
         <div class="card">
             <div class="icon">⚙️</div>
-            <h3>Configuration</h3>
-            <p>Présentation des différentes options et paramètres.</p>
+            <h3>RESSOURCES</h3>
+            <p>Retrouve les ressources et les informations du projet.</p>
         </div>
 
         <div class="card">
             <div class="icon">🎬</div>
-            <h3>Démonstrations</h3>
-            <p>Retrouve nos vidéos et présentations du projet.</p>
+            <h3>VIDÉOS</h3>
+            <p>Découvre les présentations et les démonstrations.</p>
         </div>
 
         <div class="card">
             <div class="icon">💜</div>
-            <h3>Communauté</h3>
-            <p>Rejoins notre communauté et suis les actualités.</p>
+            <h3>COMMUNAUTÉ</h3>
+            <p>Rejoins notre communauté Vuntria sur Discord.</p>
         </div>
+
     </div>
+
 </section>
 
-<section id="videos">
-    <div class="section-title">
-        <h2>NOS <span>VIDÉOS</span></h2>
-        <p>Les démonstrations de Vuntria Menu.</p>
-    </div>
+<!-- MODS -->
 
-    <div class="video-placeholder">
-        <div class="icon">▶️</div>
-        <h3>VIDÉO À VENIR</h3>
-        <p>Ajoute ici tes vidéos de présentation.</p>
-    </div>
-</section>
+<section id="mods">
 
-<section id="download">
-    <div class="download">
-        <h2>TÉLÉCHARGER <span style="color:#a855f7">VUNTRIA</span></h2>
+    <div class="mods-box">
+
+        <h2>VUNTRIA <span>MODS</span></h2>
+
         <p>
-            Retrouvez ici les fichiers de présentation
-            et les versions officielles du projet.
+            Retrouve les mods et les ressources
+            sur notre site partenaire.
         </p>
 
-        <!-- Remplace # par ton lien de téléchargement -->
-        <a href="#" class="btn primary">⬇ TÉLÉCHARGER</a>
+        <a
+        href="https://amnesia-cheats.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn primary">
+            🌐 ACCÉDER AUX MODS
+        </a>
+
     </div>
+
 </section>
+
+<!-- DISCORD -->
 
 <section id="discord">
-    <div class="section-title">
+
+    <div class="discord-box">
+
         <h2>REJOINS NOTRE <span>DISCORD</span></h2>
-        <p>Retrouve la communauté Vuntria.</p>
-        <br>
-        <!-- Remplace le lien par ton invitation Discord -->
-        <a href="#" class="btn primary" target="_blank">REJOINDRE DISCORD</a>
+
+        <p>
+            Rejoins la communauté Vuntria
+            et retrouve toutes nos actualités.
+        </p>
+
+        <a
+        href="https://discord.gg/teKtCCF7ct"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn primary">
+            💜 REJOINDRE DISCORD
+        </a>
+
     </div>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer>
-    © 2026 <span>VUNTRIA MENU</span> — Tous droits réservés.
-    <br><br>
-    Projet communautaire indépendant, non affilié à Rockstar Games.
+
+    © 2026 <span>VUNTRIA MENU</span>
+
+    <br>
+
+    Projet communautaire indépendant.
+    Non affilié à Rockstar Games.
+
 </footer>
 
 </body>
