@@ -1,512 +1,375 @@
-
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>VuntriaMods | ModsMenu GTA V</title>
-    <link rel="icon" href="https://st3.depositphotos.com/1003549/15517/i/450/depositphotos_155173966-stock-photo-letter-v-neon-light-full.jpg">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at top, #071a33 0%, #02060d 45%, #000000 100%);
-            font-family: Arial, sans-serif;
-            color: white;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            position: relative;
-        }
-
-        /* =========================
-           DISCORD INFO - TOP LEFT
-        ========================= */
-
-        .discord-info {
-            position: fixed;
-            top: 25px;
-            left: 25px;
-
-            width: 230px;
-
-            padding: 16px;
-
-            background: rgba(3, 12, 25, 0.92);
-
-            border: 1px solid #0b5cff;
-            border-radius: 12px;
-
-            box-shadow:
-                0 0 20px rgba(0, 92, 255, 0.20);
-
-            z-index: 100;
-        }
-
-        .discord-header {
-            font-size: 12px;
-            font-weight: bold;
-            color: #4da3ff;
-
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-
-            margin-bottom: 12px;
-        }
-
-        .discord-item {
-            display: flex;
-            align-items: center;
-
-            gap: 12px;
-
-            padding: 10px;
-
-            background: rgba(7, 26, 51, 0.7);
-
-            border-radius: 8px;
-
-            margin-bottom: 8px;
-        }
-
-        .discord-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .discord-icon {
-            width: 38px;
-            height: 38px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #061a35;
-
-            border: 1px solid #0b5cff;
-
-            border-radius: 8px;
-
-            font-size: 18px;
-        }
-
-        .discord-text {
-            display: flex;
-            flex-direction: column;
-
-            gap: 3px;
-        }
-
-        .discord-text strong {
-            font-size: 14px;
-            color: #ffffff;
-        }
-
-        .discord-text span {
-            font-size: 11px;
-            color: #71849b;
-        }
-
-        .online {
-            color: #4da3ff !important;
-        }
-
-
-        /* =========================
-           MAIN
-        ========================= */
-
-        .container {
-            text-align: center;
-            width: 90%;
-            max-width: 650px;
-        }
-
-
-        /* =========================
-           TITLE
-        ========================= */
-
-        h1 {
-            font-size: 48px;
-            font-weight: 900;
-            letter-spacing: 3px;
-            margin-bottom: 45px;
-
-            color: #ffffff;
-
-            text-shadow:
-                0 0 10px #006eff,
-                0 0 30px rgba(0, 110, 255, 0.5);
-        }
-
-
-        /* =========================
-           MODS
-        ========================= */
-
-        .mods {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-
-        /* =========================
-           BUTTONS
-        ========================= */
-
-        .mod-button {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 20px 25px;
-
-            text-decoration: none;
-            color: white;
-
-            background: linear-gradient(
-                135deg,
-                #071a33,
-                #030b16
-            );
-
-            border: 1px solid #0b5cff;
-            border-radius: 12px;
-
-            font-size: 17px;
-            font-weight: 700;
-
-            box-shadow:
-                0 0 15px rgba(0, 92, 255, 0.12);
-
-            transition: 0.25s ease;
-        }
-
-        .mod-button:hover {
-            transform: translateY(-4px) scale(1.02);
-
-            border-color: #1683ff;
-
-            background: linear-gradient(
-                135deg,
-                #0b2c55,
-                #061426
-            );
-
-            box-shadow:
-                0 0 15px rgba(0, 110, 255, 0.45),
-                0 0 35px rgba(0, 110, 255, 0.18);
-        }
-
-
-        /* =========================
-           MOD NAME
-        ========================= */
-
-        .mod-name {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-
-        /* =========================
-           ICON
-        ========================= */
-
-        .icon {
-            width: 42px;
-            height: 42px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #061a35;
-
-            border: 1px solid #0b5cff;
-
-            border-radius: 9px;
-
-            font-size: 20px;
-
-            box-shadow:
-                0 0 12px rgba(0, 110, 255, 0.2);
-        }
-
-
-        /* =========================
-           DOWNLOAD
-        ========================= */
-
-        .download {
-            color: #4da3ff;
-            font-size: 15px;
-        }
-
-
-        /* =========================
-           WINRAR
-        ========================= */
-
-        .winrar {
-            margin-top: 30px;
-
-            color: #6f8095;
-
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           CREDIT
-        ========================= */
-
-        .credit {
-            position: fixed;
-
-            bottom: 18px;
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            color: #52657b;
-
-            font-size: 12px;
-
-            white-space: nowrap;
-        }
-
-        .credit strong {
-            color: #4da3ff;
-
-            text-shadow:
-                0 0 10px rgba(0, 110, 255, 0.4);
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 600px) {
-
-            .discord-info {
-                top: 15px;
-                left: 15px;
-
-                width: 210px;
-            }
-
-            .container {
-                padding-top: 150px;
-                padding-bottom: 60px;
-            }
-
-            h1 {
-                font-size: 36px;
-                margin-bottom: 35px;
-            }
-
-            .mod-button {
-                padding: 17px;
-            }
-
-            .mod-name {
-                gap: 10px;
-            }
-
-            .download {
-                font-size: 12px;
-            }
-
-            .credit {
-                font-size: 10px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VUNTRIA MENU | GTA V</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --purple: #a855f7;
+    --dark-purple: #7025c9;
+    --bg: #08070d;
+    --card: #12101a;
+    --text: #ffffff;
+    --muted: #a49bb2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background: rgba(8,7,13,.95);
+    border-bottom: 1px solid #251638;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+    color: var(--purple);
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    background:
+    radial-gradient(ellipse at center, #35145d 0%, #100a1c 40%, #08070d 75%);
+}
+
+.tag {
+    border: 1px solid #8b42d6;
+    color: #c994ff;
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(38px, 8vw, 85px);
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: 0 0 35px #a855f780;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero p {
+    color: #b9adc8;
+    max-width: 550px;
+    line-height: 1.8;
+    margin: 20px 0 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px 27px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.primary {
+    background: var(--purple);
+    color: white;
+    box-shadow: 0 0 25px #a855f755;
+}
+
+.secondary {
+    border: 1px solid #7436a9;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.2);
+}
+
+section {
+    padding: 90px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+}
+
+.section-title span {
+    color: var(--purple);
+}
+
+.section-title p {
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 22px;
+}
+
+.card {
+    background: var(--card);
+    padding: 30px;
+    border: 1px solid #291c39;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: var(--purple);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 35px #8b42d622;
+}
+
+.card .icon {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.download {
+    background: linear-gradient(135deg,#1b1029,#100c18);
+    border: 1px solid #542c7c;
+    border-radius: 15px;
+    padding: 45px 25px;
+    text-align: center;
+}
+
+.download h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
+}
+
+.download p {
+    color: var(--muted);
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.video-placeholder {
+    background: #12101a;
+    border: 1px dashed #653b8e;
+    border-radius: 12px;
+    padding: 65px 20px;
+    text-align: center;
+    color: #b9adc8;
+}
+
+.video-placeholder .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    border-top: 1px solid #251638;
+    color: #82788e;
+    font-size: 12px;
+}
+
+footer span {
+    color: var(--purple);
+}
+
+@media(max-width:700px) {
+    header {
+        padding: 15px 5%;
+        height: auto;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    section {
+        padding: 65px 5%;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<header>
+    <div class="logo">VUNTRIA MENU</div>
+    <nav>
+        <a href="#home">Accueil</a>
+        <a href="#features">Fonctionnalités</a>
+        <a href="#videos">Vidéos</a>
+        <a href="#download">Téléchargement</a>
+        <a href="#discord">Discord</a>
+    </nav>
+</header>
 
-    <!-- =========================
-         DISCORD INFO
-    ========================= -->
+<div class="hero" id="home">
+    <div class="tag">GTA V ONLINE • VUNTRIA PROJECT</div>
 
-    <div class="discord-info">
+    <h1>VUNTRIA <span>MENU</span></h1>
 
-        <div class="discord-header">
-            💬 Discord
-        </div>
+    <p>
+        Bienvenue sur Vuntria Menu.
+        Découvre notre projet GTA V Online,
+        ses fonctionnalités et nos démonstrations vidéo.
+    </p>
 
+    <div class="buttons">
+        <a href="#features" class="btn primary">DÉCOUVRIR</a>
+        <a href="#videos" class="btn secondary">VOIR LES VIDÉOS</a>
+    </div>
+</div>
 
-        <!-- DISCORD NAME -->
-
-        <div class="discord-item">
-
-            <div class="discord-icon">
-                👤
-            </div>
-
-            <div class="discord-text">
-
-                <strong>Vuntria</strong>
-
-                <span class="online">
-                    ● Online
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- DISCORD SERVER -->
-
-        <div class="discord-item">
-
-            <div class="discord-icon">
-                🟦
-            </div>
-
-            <div class="discord-text">
-
-                <strong>Discord  Server</strong>
-
-                <span>
-                    https://discord.gg/kB9hFc6XQw
-                </span>
-
-            </div>
-
-        </div>
-
+<section id="features">
+    <div class="section-title">
+        <h2>NOS <span>FONCTIONNALITÉS</span></h2>
+        <p>Découvre les différentes sections du projet.</p>
     </div>
 
-
-
-    <!-- =========================
-         MAIN
-    ========================= -->
-
-    <div class="container">
-
-        <h1>VuntriaMods | ModsMenu GTA V</h1>
-
-
-        <div class="mods">
-
-
-            <!-- SCRIPT HOOK DOT NET -->
-
-            <a
-                class="mod-button"
-                href="https://github.com/VuntriaScripter/gtamods/blob/main/ScriptHookVDotNet.zip"
-                download
-            >
-
-                <div class="mod-name">
-
-                    <div class="icon">
-                        🧩
-                    </div>
-
-                    <span>
-                        ScriptHookVDotNet
-                    </span>
-
-                </div>
-
-                <span class="download">
-                    DOWNLOAD ↓
-                </span>
-
-            </a>
-
-
-            <!-- SCRIPT HOOK V -->
-
-            <a
-                class="mod-button"
-                href="https://github.com/VuntriaScripter/gtamods/blob/main/ScriptHookV_3889.0_1158.13.zip"
-                download
-            >
-
-                <div class="mod-name">
-
-                    <div class="icon">
-                        ⚙️
-                    </div>
-
-                    <span>
-                        ScriptHookV 3889.0
-                    </span>
-
-                </div>
-
-                <span class="download">
-                    DOWNLOAD ↓
-                </span>
-
-            </a>
-
-
-            <!-- MENYOO -->
-
-            <a
-                class="mod-button"
-                href="https://github.com/VuntriaScripter/gtamods/blob/main/6f8580-MenyooSP.zip"
-                download
-            >
-
-                <div class="mod-name">
-
-                    <div class="icon">
-                        🎮
-                    </div>
-
-                    <span>
-                        MenyooSP
-                    </span>
-
-                </div>
-
-                <span class="download">
-                    DOWNLOAD ↓
-                </span>
-
-            </a>
-
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🎮</div>
+            <h3>Présentation</h3>
+            <p>Découvre le projet Vuntria Menu et son interface.</p>
         </div>
 
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Configuration</h3>
+            <p>Présentation des différentes options et paramètres.</p>
+        </div>
 
-        <p class="winrar">
-            ⚠️ WinRAR or another archive manager is required to extract the files.
+        <div class="card">
+            <div class="icon">🎬</div>
+            <h3>Démonstrations</h3>
+            <p>Retrouve nos vidéos et présentations du projet.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💜</div>
+            <h3>Communauté</h3>
+            <p>Rejoins notre communauté et suis les actualités.</p>
+        </div>
+    </div>
+</section>
+
+<section id="videos">
+    <div class="section-title">
+        <h2>NOS <span>VIDÉOS</span></h2>
+        <p>Les démonstrations de Vuntria Menu.</p>
+    </div>
+
+    <div class="video-placeholder">
+        <div class="icon">▶️</div>
+        <h3>VIDÉO À VENIR</h3>
+        <p>Ajoute ici tes vidéos de présentation.</p>
+    </div>
+</section>
+
+<section id="download">
+    <div class="download">
+        <h2>TÉLÉCHARGER <span style="color:#a855f7">VUNTRIA</span></h2>
+        <p>
+            Retrouvez ici les fichiers de présentation
+            et les versions officielles du projet.
         </p>
 
+        <!-- Remplace # par ton lien de téléchargement -->
+        <a href="#" class="btn primary">⬇ TÉLÉCHARGER</a>
     </div>
+</section>
 
-
-    <!-- =========================
-         CREDIT
-    ========================= -->
-
-    <div class="credit">
-        Created by <strong>Vuntria</strong> / <strong>Galaxy</strong>
+<section id="discord">
+    <div class="section-title">
+        <h2>REJOINS NOTRE <span>DISCORD</span></h2>
+        <p>Retrouve la communauté Vuntria.</p>
+        <br>
+        <!-- Remplace le lien par ton invitation Discord -->
+        <a href="#" class="btn primary" target="_blank">REJOINDRE DISCORD</a>
     </div>
+</section>
 
+<footer>
+    © 2026 <span>VUNTRIA MENU</span> — Tous droits réservés.
+    <br><br>
+    Projet communautaire indépendant, non affilié à Rockstar Games.
+</footer>
 
 </body>
 </html>
